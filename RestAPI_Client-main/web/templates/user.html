@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div id="login" class="form">
+  <form  action="/user_log" method="post">
+    <h1>Login</h1>
+    <p>
+        <label for="username" class="uname" > username: </label>
+        <input id="username" name="username" required="required" type="text" placeholder="Your username"/>
+    </p>
+    <p>
+        <label for="password" class="yourpasswd"> password:</label>
+        <input id="password" name="password"  type="password" placeholder="your password"  title="Must contain at least one number and one lowercase and uppercase letter, and at least 8 or more characters"/>
+    </p>
+
+    <p class="login button">
+        <input type="submit" value="Login" name="form" />
+    </p>
+  </form>
+</div>
+    <br>
+<div id="register" class="form">
+  <form  action="/create_user" method="post">
+    <h1> signin</h1>
+    <p>
+        <label for="usernamesignin" class="uname" >your name</label>
+        <input id="usernamesignin" name="username" required="required" type="text" placeholder="name" />
+    </p>
+    <p>
+        <label for="emailsignin" class="youmail" > your email</label>
+        <input id="emailsignup" name="email" type="text" />
+    </p>
+    <p>
+        <label for="passwordsignin" class="yourpassword" >your password </label>
+        <input id="passwordsignin" name="password" type="text" title="Must contain at least one number and one lowercase and uppercase letter, and at least 8 or more characters"/>
+    </p>
+    <p class="signin button">
+        <input type="submit" name="form" value="signin"/>
+    </p>
+  </form>
+</div><br>
+<div>
+    <h1>delete account </h1>
+    <form action="/delete_user" method="post">
+        <label>Delete account</label>
+        <input name="username" type="text">
+        <input type="submit" name="form" value="delete">
+    </form>
+</div>
+
+{% endblock %}
